@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
         User::insert(
             [
                 [
-                    'email' => 'jan@wp.pl', 'password' => Hash::make('aaa'), 'name' => 'Jan', 'surname' => 'Kowalski'
+                    'email' => 'jan@wp.pl', 'password' => Hash::make('aaa'), 'name' => 'Jan', 'surname' => 'Kowalski', 'administrator' => '1'
                 ],
             ]
         );

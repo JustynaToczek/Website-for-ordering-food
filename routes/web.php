@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
@@ -15,11 +16,12 @@ Route::get('/', function () {
 
 Route::get('/restaurants/search', [RestaurantController::class, 'search'])->name('restaurants.search');
 
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
-
 Route::get('/restaurant/{id}', [RestaurantController::class, 'show'])->name('restaurant.show');
+
+
+Route::get('/auth/register', [AuthController::class, 'goToRegister'])->name('register');
+
+Route::post('/auth/register', [AuthController::class, 'register'])->name('register.perform');
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/auth/login', 'login')->name('login');

@@ -24,10 +24,6 @@ class RestaurantController extends Controller
 
     public function search(Request $request)
     {
-        // $request->validate([
-        //     'city' => 'required|exists:cities,city_id'
-        // ]);
-
         $city = City::findOrFail($request->input('city'));
 
         $restaurants = $city->restaurants;

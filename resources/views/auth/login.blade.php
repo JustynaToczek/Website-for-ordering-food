@@ -23,7 +23,7 @@
                         <div class="invalid-feedback">Wrong email!</div>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="continent" class="form-label">Password</label>
+                        <label for="password" class="form-label">Password</label>
                         <input id="password" name="password" type="password" class="form-control @if ($errors->first('password')) is-invalid @endif">
                         <div class="invalid-feedback">Wrong passsword!</div>
                     </div>

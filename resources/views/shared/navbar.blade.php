@@ -38,27 +38,21 @@
 
             @if (Auth::check())
                 <li class="nav-item me-2">
-                    <a class="nav-link" href="{{ route('logout') }}">wyloguj się </a>
+                    <a class="nav-link" href="{{ route('logout') }}">{{Auth::user()->name}}, log out</a>
                 </li>
             @else
                 <li class="nav-item me-4">
                     <a class="nav-link active" aria-current="page" href="{{route('login')}}"
-                    >Log in</a
-                    >
+                    >Log in</a>
                 </li>
                 <li class="nav-item me-2">
                     <a
                     class="nav-link active"
                     aria-current="page"
                     href="{{route('register')}}"
-                    >Register</a
+                    >Register</a>
+                </li>
             @endif
-
-
-
-
-            >
-          </li>
         </ul>
       </div>
     </div>

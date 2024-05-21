@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id('user_id');
             $table->string('email', 100)->unique();
             $table->string('password');
-            $table->string('name', 50)->nullable();
-            $table->string('surname', 50)->nullable();
+            $table->string('name', 50);
+            $table->string('surname', 50);
+            $table->boolean('administrator')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
