@@ -21,7 +21,7 @@ class OrderSeeder extends Seeder
         Order::insert(
             [
                 [
-                    'user_id' => '1', 'address_id' => '1', 'date' => '2024-05-18 12:00:00', 'total_price' => '19'
+                    'user_id' => '2', 'address_id' => '1', 'date' => '2024-05-18 12:00:00', 'total_price' => '19'
                 ]
             ]
         );

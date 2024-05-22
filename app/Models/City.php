@@ -12,19 +12,13 @@ class City extends Model
     use HasFactory;
 
     protected $fillable = [
-        'city_name',
+        'name',
     ];
 
     public $timestamps = false;
-    protected $primaryKey = 'city_id';
 
     public function restaurants(): HasMany
     {
-        return $this->hasMany(Restaurant::class, 'city_id', 'city_id');
-    }
-
-    public function delivery_adresses(): HasMany
-    {
-        return $this->hasMany(Delivery_address::class, 'city_id', 'city_id');
+        return $this->hasMany(Restaurant::class);
     }
 }

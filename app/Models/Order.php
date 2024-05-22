@@ -17,22 +17,21 @@ class Order extends Model
         'date',
         'total_price',
     ];
-    protected $primaryKey = 'order_id';
 
     public $timestamps = true;
 
     public function users(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'user_id');
+        return $this->belongsTo(User::class);
     }
 
     public function delivery_adresses(): BelongsTo
     {
-        return $this->belongsTo(Delivery_address::class, 'address_id', 'address_id');
+        return $this->belongsTo(Delivery_address::class);
     }
 
     public function ordered_dishes(): HasMany
     {
-        return $this->hasMany(Ordered_dish::class, 'order_id', 'order_id');
+        return $this->hasMany(Ordered_dish::class);
     }
 }

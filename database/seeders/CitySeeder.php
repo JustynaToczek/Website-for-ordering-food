@@ -21,16 +21,16 @@ class CitySeeder extends Seeder
         City::insert(
             [
                 [
-                    'city_name' => 'Warsaw'
+                    'name' => 'Warsaw'
                 ],
                 [
-                    'city_name' => 'Rzeszow'
+                    'name' => 'Rzeszow'
                 ],
                 [
-                    'city_name' => 'Gdansk'
+                    'name' => 'Gdansk'
                 ],
                 [
-                    'city_name' => 'Wroclaw'
+                    'name' => 'Wroclaw'
                 ],
             ]
         );

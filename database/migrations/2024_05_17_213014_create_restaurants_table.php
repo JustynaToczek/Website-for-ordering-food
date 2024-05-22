@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('restaurants', function (Blueprint $table) {
-            $table->id('restaurant_id');
-            $table->string('restaurant_name', 50);
+            $table->id();
+            $table->string('name', 50);
             $table->string('description', 255);
-            $table->foreignId('city_id')->constrained('cities', 'city_id');
+            $table->foreignId('city_id')->constrained('cities');
             $table->string('picture_path', 100);
             $table->timestamps();
         });

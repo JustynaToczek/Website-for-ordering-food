@@ -24,6 +24,9 @@ class UserSeeder extends Seeder
                 [
                     'email' => 'jan@wp.pl', 'password' => Hash::make('aaa'), 'name' => 'Jan', 'surname' => 'Kowalski', 'administrator' => '1'
                 ],
+                [
+                    'email' => 'ala@wp.pl', 'password' => Hash::make('aaa'), 'name' => 'Ala', 'surname' => 'Kowalska', 'administrator' => '0'
+                ],
             ]
         );
     }

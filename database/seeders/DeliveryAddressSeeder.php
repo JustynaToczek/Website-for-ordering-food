@@ -21,7 +21,7 @@ class DeliveryAddressSeeder extends Seeder
         Delivery_address::insert(
             [
                 [
-                    'city_id' => '2', 'street_name' => 'Rejtana 2', 'flat_number' => '23', 'phone_number' => '333222111'
+                    'town' => 'Rzeszow', 'street_name' => 'Rejtana 2', 'flat_number' => '23', 'phone_number' => '333222111', 'user_id' => 2
                 ]
             ]
         );

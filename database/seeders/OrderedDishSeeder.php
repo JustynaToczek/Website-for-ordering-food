@@ -21,10 +21,10 @@ class OrderedDishSeeder extends Seeder
         Ordered_dish::insert(
             [
                 [
-                    'order_id' => '1', 'dish_id' => '1'
+                    'order_id' => '1', 'dish_id' => '1', 'quantity' => '1'
                 ],
                 [
-                    'order_id' => '1', 'dish_id' => '2'
+                    'order_id' => '1', 'dish_id' => '2', 'quantity' => '2'
                 ],
             ]
         );

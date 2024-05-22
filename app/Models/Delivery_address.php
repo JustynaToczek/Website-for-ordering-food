@@ -12,23 +12,22 @@ class Delivery_address extends Model
     use HasFactory;
 
     protected $fillable = [
-        'city_id',
+        'town',
         'street_name',
         'flat_number',
         'phone_number',
+        'user_id',
     ];
-
-    protected $primaryKey = 'address_id';
 
     public $timestamps = false;
 
-    public function cities(): BelongsTo
-    {
-        return $this->belongsTo(City::class, 'city_id', 'city_id');
-    }
-
     public function orders(): HasMany
     {
-        return $this->hasMany(Order::class, 'address_id', 'address_id');
+        return $this->hasMany(Order::class);
+    }
+
+    public function users(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

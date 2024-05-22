@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -22,15 +22,20 @@ class User extends Authenticatable
         'password',
         'name',
         'surname',
+        'administrator',
     ];
 
-    protected $primaryKey = 'user_id';
     public $timestamps = false;
 
     //powiazanie z orders
     public function orders(): HasMany
     {
-        return $this->hasMany(Order::class, 'user_id', 'user_id');
+        return $this->hasMany(Order::class);
+    }
+
+    public function delivery_addresses(): HasMany
+    {
+        return $this->hasMany(Delivery_address::class);
     }
 
     /**

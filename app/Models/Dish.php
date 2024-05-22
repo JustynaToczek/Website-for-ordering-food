@@ -12,23 +12,21 @@ class Dish extends Model
     use HasFactory;
 
     protected $fillable = [
-        'dish_name',
+        'name',
         'restaurant_id',
-        'dish_price',
+        'price',
         'picture_path',
     ];
-
-    protected $primaryKey = 'dish_id';
 
     public $timestamps = false;
 
     public function ordered_dishes(): HasMany
     {
-        return $this->hasMany(Ordered_dish::class, 'dish_id', 'dish_id');
+        return $this->hasMany(Ordered_dish::class);
     }
 
     public function restaurants(): BelongsTo
     {
-        return $this->belongsTo(Restaurant::class, 'restaurant_id', 'restaurant_id');
+        return $this->belongsTo(Restaurant::class);
     }
 }

@@ -14,17 +14,18 @@ class Ordered_dish extends Model
     protected $fillable = [
         'order_id',
         'dish_id',
+        'quantity',
     ];
 
     public $timestamps = false;
 
     public function orders(): BelongsTo
     {
-        return $this->belongsTo(Order::class, 'order_id', 'order_id');
+        return $this->belongsTo(Order::class);
     }
 
     public function dishes(): BelongsTo
     {
-        return $this->belongsTo(Dish::class, 'dish_id', 'dish_id');
+        return $this->belongsTo(Dish::class);
     }
 }

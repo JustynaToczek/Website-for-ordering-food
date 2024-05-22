@@ -12,20 +12,20 @@ class Restaurant extends Model
     use HasFactory;
 
     protected $fillable = [
-        'restaurant_name',
+        'name',
         'city_id',
         'picture_path',
     ];
-    protected $primaryKey = 'restaurant_id';
+
     public $timestamps = false;
 
     public function dishes(): HasMany
     {
-        return $this->hasMany(Dish::class, 'restaurant_id', 'restaurant_id');
+        return $this->hasMany(Dish::class);
     }
 
     public function cities(): BelongsTo
     {
-        return $this->belongsTo(City::class, 'city_id', 'city_id');
+        return $this->belongsTo(City::class);
     }
 }

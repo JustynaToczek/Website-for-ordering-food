@@ -13,8 +13,9 @@ return new class extends Migration
     {
         //tabela łącząca
         Schema::create('ordered_dishes', function (Blueprint $table) {
-            $table->foreignId('order_id')->constrained('orders', 'order_id');
-            $table->foreignId('dish_id')->constrained('dishes', 'dish_id');
+            $table->foreignId('order_id')->constrained('orders');
+            $table->foreignId('dish_id')->constrained('dishes');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }
