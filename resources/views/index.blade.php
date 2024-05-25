@@ -26,8 +26,9 @@
                     class="form-select me-3 w-50"
                     aria-label="search city"
                     name="city"
+                    required
                   >
-                    <option selected disabled>Choose city</option>
+                    <option selected disabled value="">Choose city</option>
                     <option value="1">Warsaw</option>
                     <option value="2">Rzeszow</option>
                     <option value="3">Gdansk</option>

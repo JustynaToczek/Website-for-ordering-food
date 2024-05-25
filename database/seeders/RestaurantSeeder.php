@@ -32,6 +32,9 @@ class RestaurantSeeder extends Seeder
                 [
                     'name' => 'Soup Heaven', 'description' => 'The restaurant that serves soups from all around the world.', 'city_id' => '2', 'picture_path' => 'soup.jpg'
                 ],
+                [
+                    'name' => 'Soup Heaven', 'description' => 'The restaurant that serves soups from all around the world.', 'city_id' => '1', 'picture_path' => 'soup.jpg'
+                ],
             ]
         );
     }

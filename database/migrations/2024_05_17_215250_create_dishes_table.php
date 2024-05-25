@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name', 50);
             $table->foreignId('restaurant_id')->constrained('restaurants');
             $table->decimal('price', 10, 2);
+            $table->string('description', 255);
             $table->string('picture_path', 100);
             $table->timestamps();
         });

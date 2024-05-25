@@ -18,7 +18,7 @@
       >
         <ul class="navbar-nav">
           <li class="ms-3">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="{{route('show.basket')}}">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="19"

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\SearchController;
@@ -28,3 +29,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/auth/login', 'authenticate')->name('login.authenticate');
     Route::get('/auth/logout', 'logout')->name('logout');
 });
+
+Route::post('/add-to-basket', [OrderController::class, 'addToBasket'])->name('add.to.basket');
+
+Route::get('/basket', [OrderController::class, 'showBasket'])->name('show.basket');
