@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BasketController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RestaurantController;
@@ -30,6 +31,8 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/auth/logout', 'logout')->name('logout');
 });
 
-Route::post('/add-to-basket', [OrderController::class, 'addToBasket'])->name('add.to.basket');
+Route::post('/add-to-basket', [BasketController::class, 'addToBasket'])->name('add.to.basket');
 
-Route::get('/basket', [OrderController::class, 'showBasket'])->name('show.basket');
+Route::get('/basket', [BasketController::class, 'show'])->name('show.basket');
+
+Route::delete('/basket/{dishId}', [BasketController::class, 'destroy'])->name('basket.destroy');

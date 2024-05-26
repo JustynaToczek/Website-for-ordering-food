@@ -3,9 +3,6 @@
     @include('shared.head', ['pageTitle' => 'Register'])
     <body class="d-flex flex-column min-vh-100">
         @include('shared.navbar')
-
-        <main class="flex-grow-1">
-
         <div class="row d-flex justify-content-center w-100">
             <div class="col-12 d-flex justify-content-center mt-4 mb-auto ">
                 <h2 class="mb-0">Don't you have an account?</h2>
@@ -48,13 +45,7 @@
                 </form>
             </div>
         </div>
-        </main>
-
-        <footer class="container-fluid bg-body-tertiary mt-auto">
-            <div class="row text-center pt-2">
-                <p>&copy; Ordering food &ndash; 2024</p>
-            </div>
-        </footer>
+        @include('shared.footer')
     </body>
 
 </html>

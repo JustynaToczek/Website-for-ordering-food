@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class BasketController extends Controller
 {
-    public function showBasket()
+    public function show()
     {
         $basket = session('basket', []);
         return view('basket.show', compact('basket'));
@@ -61,7 +61,16 @@ class OrderController extends Controller
         return redirect()->back()->with('success', 'Added to the basket successfully.');
     }
 
-    public function destroyDish()
+
+    public function destroy($dishId)
     {
+        $basket = session('basket', []);
+
+        if (array_key_exists($dishId, $basket)) {
+            unset($basket[$dishId]);
+            session(['basket' => $basket]);
+        }
+
+        return redirect()->back()->with('success', 'Item removed from the basket.');
     }
 }

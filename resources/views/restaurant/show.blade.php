@@ -64,13 +64,7 @@
         </div>
     </main>
 
-    <footer class="bg-body-tertiary mt-auto">
-        <div class="container-fluid">
-            <div class="row text-center pt-2">
-                <p>&copy; Ordering food &ndash; 2024</p>
-            </div>
-        </div>
-    </footer>
+    @include('shared.footer')
     <script>
         function increment(dishId) {
             let numberInput = document.getElementById('number-' + dishId);

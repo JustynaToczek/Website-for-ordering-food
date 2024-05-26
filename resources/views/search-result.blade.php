@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 @include('shared.head', ['pageTitle' => 'Choose restaurant in ' .  $city_name])
-<body>
+<body class="d-flex flex-column min-vh-100">
   @include('shared.navbar')
 
   <div class="container mt-5">
@@ -29,11 +29,7 @@
     </div>
   </div>
 
-  <footer class="container-fluid bg-body-tertiary fixed-bottom">
-    <div class="row text-center pt-2">
-      <p>&copy; Ordering food &ndash; 2024</p>
-    </div>
-  </footer>
+  @include('shared.footer')
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

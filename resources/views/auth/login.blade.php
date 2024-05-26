@@ -3,7 +3,7 @@
   <html lang="en" data-bs-theme="light">
     @include('shared.head', ['pageTitle' => 'Log in'])
 
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         @include('shared.navbar')
 
         <div class="row d-flex justify-content-center w-100">
@@ -34,11 +34,6 @@
             </div>
         </div>
     </div>
-
-        <footer class="container-fluid bg-body-tertiary fixed-bottom">
-            <div class="row text-center pt-2">
-            <p>&copy; Ordering food &ndash; 2024</p>
-            </div>
-        </footer>
+    @include('shared.footer')
     </body>
 </html>
