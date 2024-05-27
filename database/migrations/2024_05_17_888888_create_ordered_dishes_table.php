@@ -13,8 +13,8 @@ return new class extends Migration
     {
         //tabela łącząca
         Schema::create('ordered_dishes', function (Blueprint $table) {
-            $table->foreignId('order_id')->constrained('orders');
-            $table->foreignId('dish_id')->constrained('dishes');
+            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
+            $table->foreignId('dish_id')->constrained('dishes')->onDelete('cascade');
             $table->integer('quantity');
             $table->timestamps();
         });

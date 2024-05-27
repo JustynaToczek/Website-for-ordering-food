@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->string('description', 255);
-            $table->foreignId('city_id')->constrained('cities');
+            $table->foreignId('city_id')->constrained('cities')->onDelete('cascade');
             $table->string('picture_path', 100);
             $table->timestamps();
         });

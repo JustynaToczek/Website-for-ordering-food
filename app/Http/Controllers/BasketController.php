@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddToBasketRequest;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
@@ -15,15 +16,6 @@ class BasketController extends Controller
 
     public function addToBasket(Request $request)
     {
-        $request->validate([
-            'dish_id' => 'required|integer|exists:dishes,id',
-            'quantity' => 'required|integer|min:1',
-            'price' => 'required|numeric|min:0',
-            'restaurant_id' => 'required|integer|exists:restaurants,id',
-            'picture_path' => 'required|string',
-            'dish_name' => 'required|string'
-        ]);
-
         $dishId = $request->input('dish_id');
         $quantity = $request->input('quantity');
         $price = $request->input('price');

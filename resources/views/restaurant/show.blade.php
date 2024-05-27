@@ -46,7 +46,10 @@
                                     <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
                                     <input type="hidden" name="picture_path" value="{{ $dish->picture_path }}">
                                     <input type="hidden" name="dish_name" value="{{ $dish->name }}">
-                                    <button type="submit" class="btn btn-outline-warning">Add to the basket</button>
+                                    @cannot('is-admin')
+                                        <button type="submit" class="btn btn-outline-warning">Add to the basket</button>
+                                    @endcannot
+
                                 </form>
                             </div>
                         </div>
