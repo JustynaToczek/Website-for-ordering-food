@@ -21,11 +21,11 @@ class Ordered_dish extends Model
 
     public function orders(): BelongsTo
     {
-        return $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class, "order_id");
     }
 
     public function dishes(): BelongsTo
     {
-        return $this->belongsTo(Dish::class);
+        return $this->belongsTo(Dish::class, "dish_id");
     }
 }

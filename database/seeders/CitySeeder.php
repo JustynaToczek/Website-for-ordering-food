@@ -29,9 +29,6 @@ class CitySeeder extends Seeder
                 [
                     'name' => 'Gdansk'
                 ],
-                [
-                    'name' => 'Wroclaw'
-                ],
             ]
         );
     }

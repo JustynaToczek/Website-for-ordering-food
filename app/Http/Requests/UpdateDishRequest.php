@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreOrderRequest extends FormRequest
+class UpdateDishRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,12 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|integer|exists:users,id',
-            'address_id' => 'required|integer|exists:delivery_addresses,id',
-            'date' => 'required|date|date_format:Y-m-d H:i:s',
-            'total_price' => 'required|numeric|min:0|regex:/^\d+(\.\d{1,2})?$/',
+            'dish_name' => 'required|string|max:50',
+            'restaurant_name' => 'required|string|max:50|exists:restaurants,name',
+            'city_name' => 'required|string|max:50|exists:cities,name',
+            'price' => 'required|numeric|min:0|regex:/^\d+(\.\d{1,2})?$/',
+            'picture_path' => 'required|string|max:100',
+            'description' => 'required|string|max:255',
         ];
     }
 }

@@ -25,6 +25,9 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('manage.cities') }}">Manage cities</a>
                 </li>
                 <li class="ms-3">
+                    <a class="nav-link active" aria-current="page" href="{{ route('manage.restaurants') }}">Manage restaurants</a>
+                </li>
+                <li class="ms-3">
                     <a class="nav-link active" aria-current="page" href="{{ route('manage.dishes') }}">Manage dishes</a>
                 </li>
             @else

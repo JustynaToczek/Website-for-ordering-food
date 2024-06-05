@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddToBasketRequest;
+use App\Models\Dish;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class BasketController extends Controller
 
         if (array_key_exists($dishId, $basket)) {
             $basket[$dishId]['quantity'] += $quantity;
-            $basket[$dishId]['price'] = ($price / $quantity) * $basket[$dishId]['quantity']; // Update the total price
+            $basket[$dishId]['price'] = ($price / $quantity) * $basket[$dishId]['quantity'];
         } else {
             $basket[$dishId] = [
                 'quantity' => $quantity,

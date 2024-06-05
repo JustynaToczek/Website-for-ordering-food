@@ -2,28 +2,39 @@
 
     <html lang="en" data-bs-theme="light">
 
-    @include('shared.head', ['pageTitle' => 'Create new order'])
+    @include('shared.head', ['pageTitle' => 'Create a new order'])
 
     <body class="d-flex flex-column min-vh-100">
         @include('shared.navbar')
+        @include('shared.session-error')
 
         <div class="container mt-5 mb-5">
             <div class="row mt-4 mb-4 text-center">
-                <h1>Create new order</h1>
+                <h1>Create a new order</h1>
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
                     <form method="POST" action="{{ route('order.store') }}" class="needs-validation" novalidate>
                         @csrf
                         <div class="form-group mb-2">
-                            <label for="user_id" class="form-label">User ID</label>
-                            <input id="user_id" name="user_id" type="text" class="form-control @if ($errors->first('user_id')) is-invalid @endif" value="{{ old('user_id')}}">
-                            <div class="invalid-feedback">Wrong user ID!</div>
+                            <label for="email" class="form-label">User email</label>
+                            <input id="email" name="email" type="text" class="form-control @if ($errors->first('email')) is-invalid @endif" value="{{ old('email')}}">
+                            <div class="invalid-feedback">Wrong user email!</div>
                         </div>
                         <div class="form-group mb-2">
-                            <label for="address_id" class="form-label">Address ID</label>
-                            <input id="address_id" name="address_id" type="text" class="form-control @if ($errors->first('address_id')) is-invalid @endif" value="{{ old('address_id')}}">
-                            <div class="invalid-feedback">Wrong address ID!</div>
+                            <label for="town" class="form-label">Town</label>
+                            <input id="town" name="town" type="text" class="form-control @if ($errors->first('town')) is-invalid @endif" value="{{ old('town')}}">
+                            <div class="invalid-feedback">Wrong town name!</div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="street_name" class="form-label">Street name</label>
+                            <input id="street_name" name="street_name" type="text" class="form-control @if ($errors->first('street_name')) is-invalid @endif" value="{{ old('street_name')}}">
+                            <div class="invalid-feedback">Wrong street name!</div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="flat_number" class="form-label">Flat number</label>
+                            <input id="flat_number" name="flat_number" type="text" class="form-control @if ($errors->first('flat_number')) is-invalid @endif" value="{{ old('flat_number')}}">
+                            <div class="invalid-feedback">Wrong flat number!</div>
                         </div>
                         <div class="form-group mb-2">
                             <label for="date" class="form-label">Date</label>

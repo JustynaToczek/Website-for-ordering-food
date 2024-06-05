@@ -2,14 +2,15 @@
 
     <html lang="en" data-bs-theme="light">
 
-    @include('shared.head', ['pageTitle' => 'Create new city'])
+    @include('shared.head', ['pageTitle' => 'Create a new city'])
 
     <body class="d-flex flex-column min-vh-100">
         @include('shared.navbar')
+        @include('shared.session-error')
 
         <div class="container mt-5 mb-5">
             <div class="row mt-4 mb-4 text-center">
-                <h1>Create new city</h1>
+                <h1>Create a new city</h1>
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-6">

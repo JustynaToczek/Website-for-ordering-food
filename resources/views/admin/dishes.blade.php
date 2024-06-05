@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en" data-bs-theme="light">
-    @include('shared.head', ['pageTitle' => 'Manage orders'])
+    @include('shared.head', ['pageTitle' => 'Manage dishes'])
 
     <body class="d-flex flex-column min-vh-100">
         @include('shared.navbar')
@@ -10,44 +10,42 @@
             <div class="row mb-1">
                 @include('shared.session-error')
                 @include('shared.session-success')
-
-                <h1>Orders</h1>
+                <h1>Dishes</h1>
             </div>
             <div class="row mb-2">
-                <a href="{{route('order.create')}}">Add a new order</a>
+                <a href="{{route('dish.create')}}">Add a new dish</a>
             </div>
             <div class="row">
                 <div class="table-responsive-sm">
                 <table class="table table-hover table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Order ID</th>
-                            <th scope="col">User email</th>
-                            <th scope="col">Town</th>
-                            <th scope="col">Street name</th>
-                            <th scope="col">flat number</th>
-                            <th scope="col">date</th>
-                            <th scope="col">Total price</th>
+                            <th scope="col">Dish ID</th>
+                            <th scope="col">Dish name</th>
+                            <th scope="col">Restaurant name</th>
+                            <th scope="col">City name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Picture path</th>
+                            <th scope="col">Description</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($orders as $order)
+                        @forelse ($dishes as $dish)
                             <tr>
-                                <td>{{ $order->id }}</td>
-                                <td>{{ $order->users->email }}</td>
-                                <td>{{ $order->delivery_addresses->town }}</td>
-                                <td>{{ $order->delivery_addresses->street_name }}</td>
-                                <td>{{ $order->delivery_addresses->flat_number }}</td>
-                                <td>{{ $order->date }}</td>
-                                <td>{{ $order->total_price }}</td>
+                                <td>{{ $dish->id }}</td>
+                                <td>{{ $dish->name }}</td>
+                                <td>{{ $dish->restaurants->name }}</td>
+                                <td>{{ $dish->restaurants->cities->name }}</td>
+                                <td>{{ $dish->price }}</td>
+                                <td>{{ $dish->picture_path }}</td>
+                                <td>{{ $dish->description }}</td>
                                 <td>
-                                    <a href="{{route('order.edit', $order->id)}}">Edit</a>
-
+                                    <a href="{{route('dish.edit', $dish->id)}}">Edit</a>
                                 </td>
                                 <td>
-                                    <form method="POST" action="{{ route('order.destroy', $order->id) }}">
+                                    <form method="POST" action="{{ route('dish.destroy', $dish->id) }}">
                                         @csrf
                                         @method('DELETE')
                                         <input type="submit" class="btn btn-danger" value="Remove"
@@ -57,7 +55,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <th scope="row" colspan="6">No orders found</th>
+                                <th scope="row" colspan="6">No dishes found</th>
                             </tr>
                         @endforelse
                     </tbody>

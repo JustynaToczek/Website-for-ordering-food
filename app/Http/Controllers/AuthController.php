@@ -15,33 +15,23 @@ class AuthController extends Controller
     public function login()
     {
         if (Auth::check()) {
-            return redirect()->route('index');
+            return redirect()->route('home');
         }
         return view('auth.login');
     }
 
-    /**
-     * Handle an authentication attempt.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function authenticate(Request $request)
     {
-        //walidacja
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-        //zalogowanie użytkownika
-        //przekierwanie na stronę glówną
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('index');
         }
 
-        //wylogowanie użytkownika
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
@@ -67,13 +57,10 @@ class AuthController extends Controller
             'surname' => $request->surname,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'administrator' => false, //domyślnie ustawiane jest false
+            'administrator' => false,
         ]);
 
-        //automatyczne logowanie nowego użytkownika
         Auth::login($user);
-
-        //przekierowanie na stronę główną
         return redirect()->route('index');
     }
 }

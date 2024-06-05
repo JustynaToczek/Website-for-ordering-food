@@ -19,19 +19,19 @@
             @else
                 <div class="row justify-content-center mt-5">
                     @foreach ($basket as $dishId => $item)
-                    <div class="col-12 mb-3 justify-content-center d-flex">
+                    <div class="col-12 mb-5 justify-content-center d-flex">
                         <div class="card mb-3 m-2 col" style="max-width: 40rem;">
                             <div class="row mh-100">
-                                <div class="col-md-4 h-100 d-flex align-items-center">
+                                <div class="col-md-4 col-sm-4 col-4 h-100 d-flex align-items-center col-sm-4">
                                     <img src="{{ asset('storage/img/' . $item['picture_path']) }}" class="img-fluid rounded-start rounded-end h-100" alt="Picture of {{ $item['dish_name'] }}" style="object-fit: cover;" />
                                 </div>
-                                <div class="col-md-5 d-flex align-items-center">
+                                <div class="col-md-5 col-sm-5 col-4 d-flex align-items-center">
                                     <div class="card-body">
                                         <h5 class="card-title">{{$item['quantity']}} x {{$item['dish_name'] }}</h5>
                                         <p class="card-text">Total: {{ $item['price'] }} $</p>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center col-3">
+                                <div class="d-flex align-items-center col-md-3 col-sm-3 col-4">
                                     <form method="POST" action="{{ route('basket.destroy', $dishId) }}">
                                         @csrf
                                         @method('DELETE')
@@ -44,8 +44,8 @@
 
                     </div>
                     @endforeach
-                    <div class="d-flex justify-content-center mt-4 mb-5">
-                        <form method="POST" action="">
+                    <div class="d-flex justify-content-center  mb-5">
+                        <form method="" action="">
                             @csrf
                             <input type="submit" class="btn btn-primary btn-lg" value="Order"/>
                         </form>

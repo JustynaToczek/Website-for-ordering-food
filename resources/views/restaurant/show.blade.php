@@ -6,33 +6,25 @@
 
     <main class="flex-grow-1">
         <div class="container mt-5">
-            @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-            @if(session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif
+            @include('shared.session-error')
+            @include('shared.session-success')
             <h3 class="d-flex justify-content-center mt-4">What would you like to order from {{ $restaurant->name }}?</h3>
             <div class="row justify-content-center mt-5">
                 @forelse ($dishes as $dish)
-                <div class="col-6 mb-3 justify-content-center d-flex">
+                <div class="col-12 col-sm-12 col-lg-6 mb-3 justify-content-center d-flex">
                     <div class="card mb-3 m-2" style="max-width: 40rem;">
                         <div class="row h-100">
-                            <div class="col-md-4 h-100 d-flex align-items-center">
+                            <div class="col-lg-4 col-sm-3 col-3 h-100 d-flex align-items-center">
                                 <img src="{{ asset('storage/img/' . $dish->picture_path) }}" class="rounded-circle img-fluid rounded-start h-100" alt="Picture of {{ $dish->name }}" style="object-fit: cover;" />
                             </div>
-                            <div class="col-md-5 d-flex align-items-center">
+                            <div class="col-lg-5 col-sm-5 col-6 d-flex align-items-center">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $dish->name }}</h5>
                                     <p class="card-text">{{ $dish->price }} $</p>
                                     <p class="card-text">{{ $dish->description }}</p>
                                 </div>
                             </div>
-                            <div class="col-3 d-flex align-items-center justify-content-center flex-column ">
+                            <div class="col-lg-3 col-sm-4 col-3 d-flex align-items-center justify-content-center flex-column">
                                 <form action="{{ route('add.to.basket') }}" method="POST">
                                     @csrf
                                     <input class="form-control text-center mb-2 border-0" type="text" id="price-display-{{ $dish->id }}" value="{{ $dish->price }} $" readonly>
@@ -49,7 +41,6 @@
                                     @cannot('is-admin')
                                         <button type="submit" class="btn btn-outline-warning">Add to the basket</button>
                                     @endcannot
-
                                 </form>
                             </div>
                         </div>
@@ -88,11 +79,9 @@
             let priceInput = document.getElementById('price-input-' + dishId);
             let pricePerUnit = parseFloat(priceInput.dataset.price);
 
-            if (!isNaN(pricePerUnit) && !isNaN(numberInput.value)) {
-                let totalPrice = (numberInput.value * pricePerUnit).toFixed(2);
-                document.getElementById('price-display-' + dishId).value = totalPrice + " $";
-                priceInput.value = totalPrice;
-            }
+            let totalPrice = (numberInput.value * pricePerUnit).toFixed(2);
+            document.getElementById('price-display-' + dishId).value = totalPrice + " $";
+            priceInput.value = totalPrice;
         }
     </script>
 

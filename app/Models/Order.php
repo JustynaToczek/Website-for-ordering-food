@@ -22,12 +22,12 @@ class Order extends Model
 
     public function users(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "user_id");
     }
 
-    public function delivery_adresses(): BelongsTo
+    public function delivery_addresses(): BelongsTo
     {
-        return $this->belongsTo(Delivery_address::class);
+        return $this->belongsTo(Delivery_address::class, "address_id");
     }
 
     public function ordered_dishes(): HasMany

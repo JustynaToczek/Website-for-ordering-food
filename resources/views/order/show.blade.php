@@ -6,9 +6,10 @@
     <body class="d-flex flex-column min-vh-100">
         @include('shared.navbar')
 
+
         <div class="row d-flex justify-content-center w-100">
             <div class="col-12 d-flex justify-content-center mt-5 mb-auto ">
-              <h2 class="mb-0">Type in your delivery adress or select from previous addresses</h2>
+              <h2 class="mb-0">Type in your delivery address or select from previous addresses</h2>
             </div>
             <div class="col-10 col-sm-10 col-md-6 col-lg-4 mt-5">
                 <form method="POST" action="{{ route('login.authenticate') }}" class="needs-validation" novalidate>

@@ -33,8 +33,18 @@ class RestaurantSeeder extends Seeder
                     'name' => 'Soup Heaven', 'description' => 'The restaurant that serves soups from all around the world.', 'city_id' => '2', 'picture_path' => 'soup.jpg'
                 ],
                 [
+                    'name' => 'Under Seoul', 'description' => 'Korean restaurant. Spicy and delicious food made with ingredients straight from South Korea.', 'city_id' => '1', 'picture_path' => 'bimbap.jpg'
+                ],
+                [
+                    'name' => 'Bobby Burger', 'description' => 'The restaurant that specializes in serving high quality, crafts burgers.', 'city_id' => '1', 'picture_path' => 'burger.jpg'
+                ],
+                [
+                    'name' => 'Torino', 'description' => 'The restaurant that serves all kinds of Italian pizza and pasta.', 'city_id' => '1', 'picture_path' => 'pizza.jpg'
+                ],
+                [
                     'name' => 'Soup Heaven', 'description' => 'The restaurant that serves soups from all around the world.', 'city_id' => '1', 'picture_path' => 'soup.jpg'
                 ],
+
             ]
         );
     }

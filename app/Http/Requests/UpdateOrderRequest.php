@@ -22,8 +22,10 @@ class UpdateOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|integer|exists:users,id',
-            'address_id' => 'required|integer|exists:delivery_addresses,id',
+            'email' => 'required|string|email|max:100',
+            'town' => 'required|string|max:50',
+            'street_name' => 'required|string|max:50',
+            'flat_number' => 'required|string|max:10',
             'date' => 'required|date|date_format:Y-m-d H:i:s',
             'total_price' => 'required|numeric|min:0|regex:/^\d+(\.\d{1,2})?$/',
         ];

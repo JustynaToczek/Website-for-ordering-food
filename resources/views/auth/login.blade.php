@@ -5,6 +5,7 @@
 
     <body class="d-flex flex-column min-vh-100">
         @include('shared.navbar')
+        @include('shared.session-error')
 
         <div class="row d-flex justify-content-center w-100">
             <div class="col-12 d-flex justify-content-center mt-5 mb-auto ">
@@ -23,9 +24,9 @@
                         <div class="invalid-feedback">Wrong email!</div>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label">Hasło</label>
                         <input id="password" name="password" type="password" class="form-control @if ($errors->first('password')) is-invalid @endif">
-                        <div class="invalid-feedback">Wrong passsword!</div>
+                        <div class="invalid-feedback">Wrong password!</div>
                     </div>
                     <div class="text-center mt-5 mb-4">
                         <input class="btn btn-primary btn-lg" type="submit" value="Submit">
