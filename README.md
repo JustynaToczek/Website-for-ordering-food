@@ -21,6 +21,14 @@ Aby uruchomić aplikację należy wykonać poniższe kroki.
 4. W terminalu, w katalogu projektu wprowadź komendy „php artisan migrate” oraz „php artisan db:seed”.
 5. W terminalu w katalogu projektu wprowadź komendę „php artisan serve” oraz w przeglądarce przejdź pod adres http://127.0.0.1:8000/
 
+## Diagram ERD bazy danych
+![image](https://github.com/user-attachments/assets/20aa1cd3-9d80-4ab8-bfa4-8e22aebeab6f)
+
+## Warstwa prezentowa - strona główna aplikacji
+![image](https://github.com/user-attachments/assets/35874245-0337-477b-af56-6e6264abf36a)
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
