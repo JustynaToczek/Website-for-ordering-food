@@ -7,6 +7,20 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Wstęp
+
+Tematem projektu jest aplikacja do zamawiania jedzenia do domu online. Projekt ma na celu w sposób prosty i przyjazny przedstawić użytkownikom ofertę strony oraz zachęcić ich do skorzystania z oferowanych usług. Użytkownik może wybrać spośród miast i restauracji oraz zamówić wybrane przez niego produkty i dania. Kolejnym założeniem projektu jest możliwość zarządzania przez administratora złożonymi przez użytkownika zamówieniami oraz ofertą, tj. miastami, restauracjami, produktami.
+
+## Uruchamianie aplikacji
+
+Aby uruchomić aplikację należy wykonać poniższe kroki.
+
+1. Zainstaluj XAMPP.
+2. W XAMPP uruchom usługę Apache oraz MySQL.
+3. Uruchom plik projektu „start.bat” (utworzy on bazę danych, zainstaluje composer, utworzy storage link).
+4. W terminalu, w katalogu projektu wprowadź komendy „php artisan migrate” oraz „php artisan db:seed”.
+5. W terminalu w katalogu projektu wprowadź komendę „php artisan serve” oraz w przeglądarce przejdź pod adres http://127.0.0.1:8000/
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
