@@ -23,16 +23,21 @@ Strona główna aplikacji zrobiona jest w sposób przejrzysty dla użytkownika. 
 W pasku nawigacyjnym przycisk „Home” przekierowuje właśnie do ww. strony głównej. Ikona wózka na zakupy przekierowuje do koszyka zalogowanego użytkownika.
 Przyciski z prawej strony paska nawigacyjnego służą zalogowaniu lub rejestracji użytkowników.
 
+
+
 ### Widok wyboru restauracji
 ![image](https://github.com/user-attachments/assets/0c2839d2-e7b6-462c-bc18-78f3a175f523)
 
 Po wybraniu miasta na stronie głównej, aplikacja przekierowuje użytkownika do widoku z wyborem restauracji. Każdą restaurację reprezentuje zdjęcie, jej nazwa oraz opis.
 
-### Widok koszyka
 
+
+### Widok koszyka
 ![image](https://github.com/user-attachments/assets/3ec17bd5-e79b-4af9-8d00-1d30e7ba5ff6)
 
 Widok koszyka jest zapewniony tylko dla zalogowanych użytkowników. Zalogowani użytkownicy po przejściu do widoku koszyka mogą zobaczyć dodane przez nich dania, ilości oraz należną cenę.
+
+
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
